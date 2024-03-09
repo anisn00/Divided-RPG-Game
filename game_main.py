@@ -90,11 +90,11 @@ while run :
     if(choix=='2') :
         f=open("save.txt","r")
         load_list=f.readline()
-        name = load_list[0]
-        hp = load_list[1]
-        Lv = load_list[2]
+        name = load_list[0][:-1]
+        hp = load_list[1][:-1]
+        Lv = load_list[2][:-1]
         Say("welcome back ",name)
-        input(">")
+        input("> ")
         menu = False
         play=True
     if choix == '3' :
@@ -179,6 +179,7 @@ while run :
      Say("fluffy : MEURS HAHAHAHAHA")
      #dir son ta3 dahka demoniaque
      Say("{vous tombez dans les vape....}")
+     save() #auto save
      SayS("....")
      input("> ")
      Say("???? : t'es enfin reveiller ?")
@@ -196,6 +197,15 @@ while run :
      Say("jane : 1. La Pierre d'Esprit\n2. Le Collier de Feu\n3. L'Élixir du Temps")
      input("> ")
      Say("jane : la personne malvaillante que  tu a croiser tout a l'heure possedait un artéfact Le collier du feu !")
+     input("> ")
+     print("\n1: et les autres détenteur d'artéfact tu les connais ?\n2: je veut partir a leurs recherche")
+     rep=input()
+     if(rep=='1') :
+        Say("jane : celui qui détient l'élixir du temp s'apelle Midas")
+        Say("et la détenteuse de la pièrre de l'esprit... je ne la connais pas")
+        Say("(elle semble mentir elle doit la connaitre)")
+     elif(rep=='2') :
+         Say("jane : ohhh tu ne perd pas de temp !") 
      Say("jane : je te conseille rester ici récuperer je revien plus tard...")
      Say("{jane qui sors de la pièce}")
      Say("(je dois partir de la )")
@@ -210,9 +220,41 @@ while run :
          Say("jane : ahh tu est la ne t'inquète pas je ne suis pas comme l'autre")
      elif (rep=='2') : 
          Say("jane : ah t'es toujour la ! ")
-     Say("")
+     Say("jane : je vais te dire un secret")
+     Say("jane : je suis ce qu'on apelle une sainte")
+     Say("jane : il y'en a plein comme moi tu peut leurs faire confiance elle peuvent réstaurer t'es point de vie")
+     hp=20
+     Say("jane : regarde.....")
+     Say("je me sens beaucoup mieux")
+     print("hp=",hp)
+     Say(name,": merci beaucoup")
+     Say("jane : si tu veut rester ici tu sera toujour le bienvenue")
+     print("\n1: non désolé je dois retrouver mon père \n2: ne pas répondre \n")
+     rep = input()
+     if(rep=='1'): 
+         Say("jane : bien alors bonne chance pour ton expidition j'espère que tu arrivera a retrouver ton père")
+     elif (rep=='2') :
+         Say("jane : je comprend...bon je te souhaite bonne chance !")
+     input("> ")
+
+     
      
          
+    
+
+         
+
+
+
+    
+     
+       
+
+         
+         
+   
+
+
     
 
          
