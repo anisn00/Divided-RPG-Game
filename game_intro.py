@@ -1,5 +1,6 @@
 import time
 import os
+from subprocess  import call
 def Say(msg, no=''):
     for lettre in msg :
         print(lettre,end='',flush=True)
@@ -11,7 +12,6 @@ def Say(msg, no=''):
 
 def clear():
     os.system("cls")
-
 
 
 def SayR(msg):
@@ -63,6 +63,19 @@ def refuser_potion():
         Say("fluffy : ALORS JE VAIS T'ATTAQUER DE MOI MÊME")
         # Insérer la suite du code pour l'attaque
 
+def print_list_steps(art_list, delay):
+    for row in art_list:
+        print(row)
+        time.sleep(delay)
+
+ascii_art = [
+    " ____             ___    _          _ ",
+    "|  _ \\  _____   _|_ _|__| | ___  __| |",
+    "| | | |/ _ \\ \\ / /| |/ _` |/ _ \\/ _` |",
+    "| |_| |  __/\\ V / | | (_| |  __/ (_| |",
+    "|____/ \\___| \\_/ |___\\__,_|\\___|\\__,_|"
+]
+
 hp = 20
 Lv=1
 run = True 
@@ -71,9 +84,10 @@ play = False
 rules = False
 while run :
 
- SayR("bienvenue dans le jeu :")
+ 
  while menu :
-    
+    print_list_steps(ascii_art,0.35)
+    print("\n\n")
     SayR(" 1 : new game")
     SayR(" 2 : Load Game")
     SayR(" 3 : rules")
@@ -181,6 +195,7 @@ while run :
      Say("{vous tombez dans les vape....}")
      save() #auto save
      SayS("....")
+     clear()
      input("> ")
      Say("???? : t'es enfin reveiller ?")
      Say("???? : je comprend t'es perdu un peu , moi c'est jane et toi ?")
@@ -192,6 +207,7 @@ while run :
          Say("jane : ohhh donc ton prénom c'est",name);
          Say("jane : très joli prénom")
      input("> ")
+     clear()
      Say("jane : disons que tu es tombé dans une forêt magique")
      Say("jane : pour sortir il te faut trouver 3 artéfact " )
      Say("jane : 1. La Pierre d'Esprit\n2. Le Collier de Feu\n3. L'Élixir du Temps")
@@ -214,6 +230,7 @@ while run :
      print("1: me cacher sous le lit \n2: attendre paisiblement jane \n")
      rep = input()
      SayS("...")
+     clear()
      if(rep=='1') :
          Say("jane : humain ! ou te cache tu ? je ne te veut aucun Mal")
          Say("{jane qui vérifie sous le lit}")
@@ -236,36 +253,10 @@ while run :
      elif (rep=='2') :
          Say("jane : je comprend...bon je te souhaite bonne chance !")
      input("> ")
-
-     
-     
-         
-    
-
-         
-
-
-
-    
-     
-       
-
-         
-         
-   
-
-
-    
-
-         
-
-
-
-    
-     
-       
-
-         
-         
-   
-
+     SayS(".....")
+     clear()
+     Say("(je vais découvrir ce monde mais je dois chercher les artéfact pour retrouver mon père et ma famille)")
+     clear()
+     print_list_steps(ascii_art,0.4)
+     SayS("...")
+     call(["python","game_mid.py"])
