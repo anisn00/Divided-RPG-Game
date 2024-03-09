@@ -41,7 +41,7 @@ def sign_up():
         messagebox.showerror('Error', 'Enter All Data')
 
 def open_game_file():
-    call(["python","main.py"])
+    call(["python","game_main.py"])
         
 def login_account():
     username = username_entry2.get()
@@ -83,13 +83,13 @@ def login():
     global password_entry2
     
     username_entry2 = customtkinter.CTkEntry(frame2,font=font2,text_color='#fff',fg_color='#001a2e',bg_color='#121111',border_color='#004780',border_width=3,placeholder_text='Username',placeholder_text_color='#a3a3a3',width=200,height=50)
-    username_entry2.place(x=500,y=120)
+    username_entry2.place(x=550,y=120)
     
     password_entry2 = customtkinter.CTkEntry(frame2,font=font2,show = '*',text_color='#fff',fg_color='#001a2e',bg_color='#121111',border_color='#004780',border_width=3,placeholder_text='Password',placeholder_text_color='#a3a3a3',width=200,height=50)
-    password_entry2.place(x=500,y=200)
+    password_entry2.place(x=550,y=200)
     
     login_button2 = customtkinter.CTkButton(frame2,command=login_account,font=font2,text_color='#fff',text='Log In',fg_color='#00965d',hover_color='#006e44',bg_color='#121111',cursor ='hand2',corner_radius=5,width=120)
-    login_button2.place(x=500,y=280)
+    login_button2.place(x=550,y=280)
     
     # Add a back button
     back_button = customtkinter.CTkButton(frame2, command=show_frame1, font=font4, text_color='#fff', text='Back',
@@ -149,17 +149,17 @@ signup_label = customtkinter.CTkLabel(frame1, font = font1, text = 'Sign up',tex
 signup_label.place(x=550,y=20)
 
 username_entry = customtkinter.CTkEntry(frame1, font = font2, text_color = '#fff',fg_color = '#001a2e' ,bg_color = '#121111',border_color = '#004780',border_width=3, placeholder_text= 'Username', placeholder_text_color= '#a3a3a3', width = 200, height=50)
-username_entry.place(x=520,y=120)
+username_entry.place(x=550,y=120)
 
 password_entry = customtkinter.CTkEntry(frame1, font = font2,show = '*' ,text_color = '#fff',fg_color = '#001a2e' ,bg_color = '#121111',border_color = '#004780',border_width=3, placeholder_text= 'Password', placeholder_text_color= '#a3a3a3', width = 200, height=50)
-password_entry.place(x=520,y=190)
+password_entry.place(x=550,y=190)
 
 
 signup_button = customtkinter.CTkButton(frame1,command=sign_up ,font = font2, text_color = '#fff', text= 'Sing up', fg_color= '#00965d', hover_color='#006e44', bg_color='#121111', cursor='hand2', corner_radius=5, width=120)
-signup_button.place(x=530,y=280)
+signup_button.place(x=550,y=280)
 
 login_label = customtkinter.CTkLabel(frame1, font = font3, text = 'Already have an account ?',text_color='#fff', bg_color= '#001220')
-login_label.place(x=520,y=340)
+login_label.place(x=550,y=340)
 
 login_button = customtkinter.CTkButton(frame1 ,command=login,font = font4, text_color = '#fff',text ='Login' ,fg_color = '#001220', hover_color='#001220', cursor = 'hand2', width=40)
 login_button.place(x=700,y=340)
