@@ -4,11 +4,32 @@ import bcrypt
 from tkinter import *
 from tkinter import messagebox
 from subprocess import call
+import tkinter as tk
+from tkinter import PhotoImage
+import ctypes
 
 app = customtkinter.CTk()
 app.title('Game Account')
 app.geometry('800x600')
 app.config(bg='#001220')
+
+
+try:
+    app.iconbitmap("logo_task.ico")
+except Exception as e:
+    print("Error:", e)
+
+def set_taskbar_icon(window_handle, icon_path):
+    try:
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("myappid")
+        ctypes.windll.user32.SendMessageW(window_handle, 0x80, 0, icon_path)
+    except Exception as e:
+        print("Error setting taskbar icon:", e)
+
+window_handle = app.winfo_id()
+
+set_taskbar_icon(window_handle, "logo_task.ico")
+
 
 font1 = ('Helvitica', 25,'bold')
 font2 = ('Arial', 17,'bold')
