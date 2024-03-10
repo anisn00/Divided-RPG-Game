@@ -7,8 +7,7 @@ def play_song(song_file):
         pygame.mixer.music.load(song_file)
         print("Playing:", song_file)
         pygame.mixer.music.play()
-        while pygame.mixer.music.get_busy():
-            pygame.time.Clock().tick(10)
+        input("Appuyez sur Entrée pour arrêter la musique...")
     except pygame.error as e:
         print("An error occurred:", e)
     finally:
