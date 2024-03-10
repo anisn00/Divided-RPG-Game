@@ -1,4 +1,5 @@
 import time
+import pygame
 import os
 from subprocess  import call
 def Say(msg, no=''):
@@ -23,7 +24,7 @@ def SayR(msg):
 def SayS(msg):
     for lettre in msg :
         print(lettre,end='',flush=True)
-        time.sleep(0.13)
+        time.sleep(0.1)
     print("\n")
 
 def save() :
@@ -41,6 +42,7 @@ def save() :
 def prendre_potion():
     global hp, Lv
     hp = 1
+    Say("{vous buvez la potion}")
     Say(".......")
     clear()
     print(name, "\n")
@@ -68,6 +70,50 @@ def print_list_steps(art_list, delay):
         print(row)
         time.sleep(delay)
 
+def play_song_menu(song_file):
+    pygame.init()
+    pygame.mixer.init()
+    try:
+        pygame.mixer.music.load(song_file)
+        print("Playing:", song_file)
+        pygame.mixer.music.play()
+        print_list_steps(ascii_art,0.5)
+        print("\n")
+        SayS("Bienvenu dans le jeu de choix, Sachez que vos choix sont décisif sur la suite de l'histoire")
+        SayS("on vous conseille de bien réflichir avant de faire vos choix")
+        SayS("la confiance...faut la préter que a ceux qui la mérite")
+        SayS("bonne chance...")
+        input("> ")
+    except pygame.error as e:
+        print("An error occurred:", e)
+    finally:
+        pygame.mixer.music.stop()
+        pygame.quit()
+
+def play_rire(song_file):
+    pygame.init()
+    pygame.mixer.init()
+    try:
+        pygame.mixer.music.load(song_file)
+        pygame.mixer.music.play()
+        SayS(".....HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAAH")
+        input("> ")
+    except pygame.error as e:
+        print("An error occurred:", e)
+    finally:
+        pygame.mixer.music.stop()
+        pygame.quit()
+        
+if __name__ == "__main__":
+    song_rire = r"C:\Users\Aminos\Desktop\projet\dahka2.mp3"
+    
+if __name__ == "__main__":
+    song_menu = r"C:\Users\Aminos\Desktop\projet\menuzik.mp3"
+
+
+
+
+
 ascii_art = [
     " ____             ___    _          _ ",
     "|  _ \\  _____   _|_ _|__| | ___  __| |",
@@ -84,9 +130,8 @@ play = False
 rules = False
 while run :
 
- 
  while menu :
-    print_list_steps(ascii_art,0.35)
+    play_song_menu(song_menu)
     print("\n\n")
     SayR(" 1 : new game")
     SayR(" 2 : Load Game")
@@ -130,30 +175,29 @@ while run :
      SayS("...")
      clear()
      Say("cam :...",name)
-     input()
      input("> ")
-     Say("reveille t...")
+     Say("cam : reveille t...")
      input("> ")
      Say("cam : reveille toi ! papa t'attend en bas ")
-     print("\n 1 : ohh d'accord je me prépare j'arrive ! \n 2 : ohhhh cam t'abuse je dormais \n")
+     print("\n1 : ohh d'accord je me prépare j'arrive ! \n2 : ohhhh cam t'abuse je dormais \n")
      rep=input()
      if (rep=='1') :
-         Say("d'accord papa est préssé fait vite ")
+         Say("cam : d'accord papa est préssé fait vite ")
      elif rep == '2' :
          SayR("cam : EYYY ! père est préssé il va pas arriver en retard a cause de toi")  
          input("> ") 
-         Say(" vous : d'accord j'arrive je me prépare")
+         Say("vous : d'accord j'arrive je me prépare")
          input("> ")
          SayS("(ma soeur est très maniaque et déteste quand je suis en retard mais je l'aime)") 
      SayS("......")  
      clear()
-     SayS("(après avoir rejoint mon père nous somme partie en expidition dans une foret nommé fort des mort)")
+     SayS("(après avoir rejoint mon père nous somme partie en expidition dans une foret inconnue)")
      #on peut ajouter une musique ou un son pour la scène suivante
      SayS("{après de longue heure de marche dans la foret le père et son fils se perdent de vue}")
     #hna ndiro tsawaer ou ndiro tswira ou le personagge principale yezle9 ou ytih f une grotte
-     Say(name,"{ se reveille totalment boulversé par la situation}")
+     Say({name},"{se reveille totalment boulversé par la situation}")
      input()
-     Say(name," {trouve une porte}")
+     Say({name}," {trouve une porte}")
     #li ma bin { } ta3 narrateur () fi 9elbo le reste dialogue
      print("\n 1 : ouvrir la porte et entrer \n 2 : non trop risqué \n")
      rep=input()
@@ -166,13 +210,14 @@ while run :
      print("\n 1 : lui parler \n 2 : non je ne parle pas au innconu \n")
      rep=input()
      if(rep=='1') :
-      Say(name ,":  Bon.... bonjour, vous savez on est ou ?")
+      Say(name ," : Bon.... bonjour")
      elif (rep=='2') :
          Say("(j'essaie de passer discrétment sans me faire reperer)")
          Say("??? : eyyyy toi la-bas vien ici")
      input("> ")
      Say("??? : ahhh t'es un nouveau ici je ne t'ai jamais vu je me présente moi c'est fluffy")
      input("> ")
+     Say("fluffy : tu a l'air perdu ..")
      Say("fluffy : quelqu'un doit t'apprendre comment ça marche ici ")
      input("> ")
      Say("fluffy : tu a ce qu'on apelle les Hp eh bah c'est t'as santé il faut prendre soin de toi \n regarde ton nombre d'hp :", " 20")
@@ -188,7 +233,10 @@ while run :
      elif (rep=='2') :
          refuser_potion()
         #tswira ou il se fait attaquer
-     Say("fluffy : ... HAHAHAHAHAHAHAHAHAHAH imbécile ")
+     #play_song(song_rire)
+     Say("fluffy : ....")
+     input("> ")
+     play_rire(song_rire)
      Say("fluffy : DANS CE MONDE C'EST TUER OU ETRE TUER")
      Say("fluffy : MEURS HAHAHAHAHA")
      #dir son ta3 dahka demoniaque
