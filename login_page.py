@@ -62,7 +62,9 @@ def sign_up():
         messagebox.showerror('Error', 'Enter All Data')
 
 def open_game_file():
-    call(["python","game_main.py"])
+    app.withdraw()
+    call(["python", "game_intro.py"])
+    app.destroy()
         
 def login_account():
     username = username_entry2.get()
