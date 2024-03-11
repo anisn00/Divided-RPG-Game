@@ -18,6 +18,12 @@ try:
     app.iconbitmap("logo_task.ico")
 except Exception as e:
     print("Error:", e)
+    
+    
+def app_intro():
+    call(["python", "app_intro.py"])
+
+app_intro()
 
 def set_taskbar_icon(window_handle, icon_path):
     try:
@@ -115,8 +121,7 @@ def login():
     login_button2.place(x=550,y=280)
     
     # Add a back button
-    back_button = customtkinter.CTkButton(frame2, command=show_frame1, font=font4, text_color='#fff', text='Back',
-                                          fg_color='#001220', hover_color='#001220', cursor='hand2', width=40)
+    back_button = customtkinter.CTkButton(frame2, command=show_frame1, font=font4, text_color='#fff', text='Back', fg_color='#001220', hover_color='#001220', cursor='hand2', width=40)
     back_button.place(x=20, y=20)
 
 
@@ -130,6 +135,7 @@ def show_frame1():
     image1 = PhotoImage(file="l.png")
     image1_label = Label(frame1, image=image1, bg='#001220')
     image1_label.place(x=4, y=60)
+    frame1.image1 = image1
 
     signup_label = customtkinter.CTkLabel(frame1, font=font1, text='Sign up', text_color='#fff', bg_color='#001220')
     signup_label.place(x=550, y=20)
@@ -137,28 +143,19 @@ def show_frame1():
     global username_entry
     global password_entry
 
-    username_entry = customtkinter.CTkEntry(frame1, font=font2, text_color='#fff', fg_color='#001a2e', bg_color='#121111',
-                                            border_color='#004780', border_width=3, placeholder_text='Username',
-                                            placeholder_text_color='#a3a3a3', width=200, height=50)
-    username_entry.place(x=520, y=120)
+    username_entry = customtkinter.CTkEntry(frame1, font=font2, text_color='#fff', fg_color='#001a2e', bg_color='#121111',border_color='#004780', border_width=3, placeholder_text='Username',placeholder_text_color='#a3a3a3', width=200, height=50)
+    username_entry.place(x=550, y=120)
 
-    password_entry = customtkinter.CTkEntry(frame1, font=font2, show='*', text_color='#fff', fg_color='#001a2e',
-                                            bg_color='#121111', border_color='#004780', border_width=3,
-                                            placeholder_text='Password', placeholder_text_color='#a3a3a3', width=200,
-                                            height=50)
-    password_entry.place(x=520, y=190)
+    password_entry = customtkinter.CTkEntry(frame1, font=font2, show='*', text_color='#fff', fg_color='#001a2e',bg_color='#121111', border_color='#004780', border_width=3,placeholder_text='Password', placeholder_text_color='#a3a3a3', width=200,height=50)
+    password_entry.place(x=550, y=190)
 
-    signup_button = customtkinter.CTkButton(frame1, command=sign_up, font=font2, text_color='#fff', text='Sing up',
-                                            fg_color='#00965d', hover_color='#006e44', bg_color='#121111',
-                                            cursor='hand2', corner_radius=5, width=120)
-    signup_button.place(x=530, y=280)
+    signup_button = customtkinter.CTkButton(frame1, command=sign_up, font=font2, text_color='#fff', text='Sing up',fg_color='#00965d', hover_color='#006e44', bg_color='#121111',cursor='hand2', corner_radius=5, width=120)
+    signup_button.place(x=550, y=280)
 
-    login_label = customtkinter.CTkLabel(frame1, font=font3, text='Already have an account ?', text_color='#fff',
-                                          bg_color='#001220')
-    login_label.place(x=520, y=340)
+    login_label = customtkinter.CTkLabel(frame1, font=font3, text='Already have an account ?', text_color='#fff',bg_color='#001220')
+    login_label.place(x=530, y=340)
 
-    login_button = customtkinter.CTkButton(frame1, command=login, font=font4, text_color='#fff', text='Login',
-                                           fg_color='#001220', hover_color='#001220', cursor='hand2', width=40)
+    login_button = customtkinter.CTkButton(frame1, command=login, font=font4, text_color='#fff', text='Login',fg_color='#001220', hover_color='#001220', cursor='hand2', width=40)
     login_button.place(x=700, y=340)
 
 frame1 = customtkinter.CTkFrame(app, bg_color='#001220',fg_color='#001220', width=1000, height=810)
