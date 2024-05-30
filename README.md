@@ -70,7 +70,9 @@ World War Z
 
 During the beginning of the game (prologue), the page might not close automatically. If this happens, please close it manually.
 
-The same issue might occur on the welcome screen (welc.py). Please close the page manually if necessary.
+Another issue might occur on the welcome screen (welc.py). DOn't touch anything until the "continue " botton appears or it will crash.
+
+Don't forget to use " pip install pygame_menu "
 
 This game is a labor of love, and we hope you enjoy the experience. Be sure to read the README.md for additional information and detailed instructions on how to run the game.
 
