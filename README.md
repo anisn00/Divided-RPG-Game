@@ -1,4 +1,4 @@
-#Divided - A Choice-Based RPG
+# Divided - A Choice-Based RPG
 
 Welcome to Divided, a role-playing game where your choices shape the story. Embark on the adventure of a child lost in a mysterious cave and discover what awaits you.
 
